@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>EasyHired | Search your favourite Freelancer</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        class="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/mobile-style.css">
+    <link rel="stylesheet" href="../css/search-filter.css" >
+
+    <!-- Sweet Alert JavaScript -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
+</head>
+
+<body class="search-page">
+    <!--Header-->
+    <header class="userViewClient">
+        <div class="container-fluid p-0" style="background-color: rgb(23, 65, 95);">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-logo" href="#">
+                    <img src="../images/whiteTransparentLogo-03.png" alt="#EasyHired" style="width: 10rem;"></i>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars text-light"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mr-auto"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="../pages/main.html" class="nav-link">Main
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutUs">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown">
+                                <a href="../pages/cPage.html" class="nav-link">Profile</a>
+                                <div class="dropdown-content">
+                                    <a href="../pages/cPage.html" >View</a>
+                                    <a href="../pages/cPage.html">Favourite List</a>
+                                    <a href="#" onclick="javascript:logout()">Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="mainPageTitle">
+                    <h4>Search for Freelancer</h4>
+                    <div class="search-container">
+                        <!-- Search Bar -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!----------------------------------------------------Search Engine------------------------------------------------->
+    <br>
+    
+    <div class="container">
+        <div class="row searchFilter">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input id="searchField" onkeyup="validate(this)" type="text" placeholder="Search"
+                        required="required" class="form-control" aria-label="Text input with segmented button dropdown">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                class="label-icon">Category</span> <span class="caret">&nbsp;</span></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <ul class="category_filters">
+                                <li>
+                                    <input class="cat_type category-input" type="radio" name="radios" id="Freelancer"
+                                        value="Freelancer" onclick="displayFreeTable()"><label class="category-label"
+                                        for="Freelancer">Freelancer</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radios" id="Services" value="Services" onclick="displayServTable()"><label
+                                        class="category-label" for="Services" >Services</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <button disabled id="searchBtn" type="button" onclick="checkButton()"
+                            class="btn btn-secondary btn-search"><span class="glyphicon glyphicon-search">&nbsp;</span>
+                            <span class="label-icon">Search</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------------------------------------------------------------------------------------->
+
+    <!-- display information -->
+    <div class="search-box container border">
+        <div class="search-table"  id="FreelancerTable1">
+            <table class="table table-hover" style="width:100%" id="freelancerTable">
+                <tr id="tr" > 
+                    <th>Name</th> 
+                    <th>Username</th>     
+                    <th>Email</th>
+                    <th>Services</th>
+                    <th>Working Hours</th>
+                    <th></th>
+                </tr>
+            </table>
+            
+        </div>
+        <div class="search-table" id="ServiceTable1" style="display: none;">
+            <table class="table table-hover" style="width:100%" id="freelancerTable2" >
+                <tr id="tr" > 
+                    <th>Name</th> 
+                    <th>Username</th>     
+                    <th>Email</th>
+                    <th>About</th>
+                    <th>Services</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+
+    <div class="section-2"></div>
+
+    <footer>
+        <div class="container-fluid p-0" id="aboutUs">
+            <div class="row text-left">
+                <div class="col-md-5 col-sm-5">
+                    <h4 class="font-weight-bold">About Us</h4>
+                    <p class="text-white">
+                        EasyHired was developed to help freelancers to promote themselves globally
+                        through network. We provide the simplest way to search for the talents
+                        you want.
+                    </p>
+                    <img src="../images/whiteTransparentLogo-03.png" alt="EasyHired">
+                    <p class="pt-4 text-white"> ©2020 | Prepared by
+                        <span>Group 16</span>
+                    </p>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <h4 class="font-weight-bold">Newsletter</h4>
+                    <p class="text-white">Stay Updated</p>
+                    <form class="form-inline">
+                        <div class="col pl-0">
+                            <div class="input-group pr-5">
+                                <input type="text" class="form-control bg-dark text-white"
+                                    id="inlineFormInputGroupUsername2" placeholder="Email">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="social col-md-2 col-sm-12">
+                    <h4 class="font-weight-bold">Follow Us</h4>
+                    <div class="column text-light">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                        <a href="https://twitter.com/twitter" class="fab fa-twitter"></a>
+                        <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+    <!-- Firebase Connection -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+   
+    <script>
+        //  Firebase configuration
+          var firebaseConfig = {
+          apiKey: "AIzaSyDtitM579YVzXBQj-GcTk1N6yGihhFkXJ4",
+          authDomain: "cmt322-gp16.firebaseapp.com",
+          databaseURL: "https://cmt322-gp16.firebaseio.com",
+          projectId: "cmt322-gp16",
+          storageBucket: "cmt322-gp16.appspot.com",
+          messagingSenderId: "780450955258",
+          appId: "1:780450955258:web:bf9e8312e4b6089a04ee43",
+          measurementId: "G-JPM4D18DWM"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/search.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/main.js"></script>
+</html>

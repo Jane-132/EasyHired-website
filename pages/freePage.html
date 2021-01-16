@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+	<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>EasyHired | Welcome!</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" class="stylesheet">
+        
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/mobile-style.css"/>
+		
+		<!-- Sweet Alert JavaScript -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    </head>
+
+    <body class="client-page" onload="displayFreelancerProfile()">
+        <!--Header-->
+        <header class="userViewClient">
+            <div class="container-fluid p-0" style="background-color: rgb(23, 65, 95);">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-logo" href="../index.html">
+                        <img src="../images/whiteTransparentLogo-03.png" alt="#EasyHired" style="width: 10rem;"></i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars text-light"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="mr-auto"></div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a href="../pages/freemain.html" class="nav-link">Main
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#aboutUs">About Us</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <a href="../pages/freePage.html" class="nav-link">Profile</a>
+                                    <div class="dropdown-content">
+                                        <a href="#" onclick="javascript:logout()">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header> 
+		<div class="profile pt-4" id="showflcProfile" >
+            <div class="container">
+                <div class="profile-head">
+                    <div class="row" >
+                        <div class="col-md-4" >
+                            <div class="profile-img">
+                                <img src="../images/avatar.png" alt="Profile-Pic" class="profile-image">
+                            </div>
+                        </div>
+                        <div class="col-md-8" >
+							<div class="profile-head">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="WlcUser">
+											<h3>My Profile</h3>
+											<span>Welcome!</span>
+											<span id="flcUname1">User Name</span>							
+										</div>
+									</div>
+									<div class="col-md-6">
+										<p style="padding: 0;"><button id="editBtn" class="btn btn-outline-primary text-uppercase mt-3" onclick="showEdit2()">Edit Profile</button></p>
+									</div>
+								</div>
+								<div class="personal_details">
+									<!-- Freelancer's Name -->
+									<h6>Personal Information:</h6>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="card-row">
+												<h6 id="flcFullNamelabel">Full Name</h6>
+												<span id="flcName"></span>
+											</div>
+											<div class="card-row">
+												<h6 id="flcPassportIClabel">Passport/IC NO.</h6>
+												<span id="flcPassportIC">000000000000</span>
+											</div>
+										</div>
+										
+										<div class="col-md-6">
+											<div class="card-row">
+												<h6 id="flcPhonelabel">Phone Number</h6>
+												<span id="flcPhone">000-0000000</span>
+											</div>
+											<div class="card-row">
+												<h6 id="flcAddresslabel">Address</h6>
+												<span id="flcAddress">address.details</span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs" role="tablist" style="bottom: 0;">
+									<li class="nav-item">
+										<a class="nav-link active" id="personalInfor-tab" data-toggle="tab" href="#flcpersonalInforSec">About</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="skillQuali-tab" data-toggle="tab" href="#flcSkillQualiSec">Skills & Qualifications</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="freelancerDetails-tab" data-toggle="tab" href="#flcDetailsSec">Services</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="accDetails-tab" data-toggle="tab" href="#flcAccSettingSec">Account Details</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+                    <div class="row" >
+						<div class="col-md-4">
+                            
+                        </div>
+					
+                        <div class="col-md-8" >
+							<div class="section-2"></div>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- About Me Content -->
+								<div id="flcpersonalInforSec" class="container tab-pane active">
+									<div class="container1">
+										<h3>About Me</h3>
+									</div>
+									
+									<div class="container1">
+										<h6 id="flcAbout" class="about-content"></h6>
+									</div>
+									<br>
+								</div>
+								
+                                <!-- Skills & Qualification Content -->
+								<div id="flcSkillQualiSec" class="container tab-pane fade">
+									<div class="container1">
+										<h3>Skills & Qualifications</h3>
+										<label for="flcAcaQualilabel">Academic Qualification</label>
+										<h6 id="flcAcaQualification"></h6>
+									</div>
+									<div class="container1">
+										<label for="flcProfessionallabel">Professional/Specification</label>
+										<h6 id="flcProf"></h6>
+									</div>
+								</div>
+								
+                                <!-- Freelancer Details Content -->
+								<div id="flcDetailsSec" class="container tab-pane fade">
+									<div class="container1">
+										<h3>Freelancer Details:</h3>
+										<label for="flcTypelabel">Freelancer Type</label>
+										<h6 id="flcType"></h6>
+									</div>
+									
+									<div class="container1" id="companyType" style="display:none;">
+										<label for="flcCompNamelabel">Company Name</label>
+										<h6 id="flcCompName"></h6>
+									</div>
+									
+									<div class="container1" id="companyType1" style="display:none;">
+										<label for="flcCompRegNolabel">Company Registration No.</label>
+										<h6 id="flcCompRegNo"></h6>
+									</div>
+									
+									<div class="container1" id="companyType2" style="display:none;">
+										<label for="flcCompDescplabel">Company Description</label>
+										<h6 id="flcCompDescp"></h6>
+									</div>
+									<div class="container1">
+										<label for="flcProvServiceslabel">Provided Services</label>
+										<h6 id="flcServices"></h6>
+									</div>
+									<div class="container1">
+										<label for="flcServicesDescplabel">Services Description</label>
+										<h6 id="ServicesDescription"></h6>
+									</div>
+									<div class="container1">
+										<label for="flcWorkHrslabel">Working Hours</label>
+										<h6 id="flcWorkHrs"></h6>
+									</div>
+								</div>
+								<!-- Account Details Content -->
+								<div id="flcAccSettingSec" class="container tab-pane fade">
+									<div class="container1">
+										<h3>Account Details:</h3>
+										<label for="flcUsernamelabel">Username</label>
+										<h6 id="flcUname"></h6>
+									</div>
+									<div class="container1">
+										<label for="flcEmaillabel">Email</label>
+										<h6 id="flcEmail"></h6>
+									</div>
+									<div class="container1">
+										<label for="accTypelabel">Account Type</label>
+										<h6 id="accType"></h6>
+									</div>
+								</div>
+								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		
+		<div class="row" id="editProfileSec2" style="display:none;" >
+			<div class="editForm">
+				<h1 class="h1 text-center text-dark mt-3 mb-3">My Profile</h1>
+						  
+				<br><h3 style="text-align:center;font-weight:bold;font-size:35px;">Edit Profile Form</h3><br><br>
+					<div class="form-group">
+						<label for="flcUsernamelabel" style="text-align:left;">Username:</label>
+						<p id="flcUname2" style="display:inline;font-size:18px;font-weight:bold;text-align:left;"></p><br>
+						<label for="flcEmaillabel" style="text-align:left;">Email:</label>
+						<p id="flcEmail2" style="display:inline;font-size:18px;font-weight:bold;text-align:left;"></p><br>
+						<label for="accTypelabel" style="text-align:left;">Account Type:</label>
+						<p id="accType2"style="display:inline;font-size:18px;font-weight:bold;text-align:left;"></p><br>
+						<label for="flcTypelabel" style="text-align:left;">Freelancer Type:</label>
+						<p id="flcType2"style="display:inline;font-size:18px;font-weight:bold;text-align:left;"></p><br>
+						<label for="flcCompTypelabel" id="flcCompTypelabel" style="text-align:left;display:none;">Company Name:</label>
+						<p id="flcCompType2"style="display:inline;font-size:18px;font-weight:bold;text-align:left;"></p>
+					</div>
+					<div class="form-group">
+						<i class="fas fa-user-cog" ></i>
+						<h3 class="step" style="display:inline;margin-left:10px;">Personal Information</h3><br><br>
+						<label for="flcFullNamelabel"><span class="text-danger ml-1 mx-1">*</span>Current Full Name: </label>
+						<p id="flcName2" style="display:inline; margin-left:5px; font-size:18px; color:#507CD5; font-weight:bold;" ></p><br>
+						<input type="text" class="form-control" id="flcNewName" onblur="checkFullName1()" placeholder="Enter Your New Full Name Here.." required>
+						<small id="fullNameErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+					</div>
+					<div class="form-group">
+						<label for="flcPassportIClabel"><span class="text-danger ml-1 mx-1">*</span>Current Passport/IC NO.:</label>
+						<p id="flcPassportIC2" style="display:inline;margin-left:5px;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+						<input type="text" class="form-control" id="flcNewPassportIC" onblur="checkPassportIC1()" placeholder="Enter Your New Passport/IC (A00000000/999999999999) Here.." required>
+						<small id="passportICErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+					</div>
+					<div class="form-group">
+						<label for="flcPhonelabel"><span class="text-danger ml-1 mx-1">*</span>Current Phone Number:</label>
+						<p id="flcPhone2" style="display:inline; margin-left:5px;font-size:18px; color:#507CD5; font-weight:bold;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+						<input type="text" class="form-control" id="flcNewPhone" onblur="checkPhone1()" placeholder="Enter Your New Phone No.(XXX-XXX XXXX) Here.." required>
+						<small id="phoneErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+					</div>
+					<div class="form-group">
+						<label for="flcAddresslabel"><span class="text-danger ml-1 mx-1">*</span>Current Address:</label>
+						<p id="flcAddress2"style="display:block;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+						<textarea rows="4" cols="50" class="form-control" id="flcNewAddress" type="textarea" name="Address" onblur="checkAddress1()" placeholder="Edit Your New Address Here.." required ></textarea>
+						<small id="addressErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+					</div>
+					<div class="form-group">
+						<label for="flcAboutlabel"><span class="text-danger ml-1 mx-1">*</span>Current About:</label>
+						<p id="flcAbout2" style="display:block;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+						<textarea rows="4" cols="50" class="form-control" id="flcNewAbout" type="textarea" name="About" onblur="checkAbout1()" placeholder="Edit Your New About Here.." required></textarea>
+						<small id="aboutErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+					</div>
+					<div class="form-group">
+						<i class="fas fa-graduation-cap"></i>
+						<h3 class="step" style="display:inline;margin-left:10px;">Skills & Qualifications</h3><br><br>
+						<label for="flcAcaQualilabel"><span class="text-danger ml-1 mx-1">*</span>Current Academic Qualification:</label>
+						<p id="flcAcaQualification2" style="display:inline; margin-left:5px;font-size:18px; color:#507CD5; font-weight:bold;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+						<select id="flcNewAcaQualification" class="form-control" onclick ="checkAcaQuali()" onChange="checkNewAca(this)" required>
+							<option value="0" selected>Please Select Your New Academic Qualification:</option>
+							<option value="1">SPM/O-level</option>
+							<option value="2">SPTM/Matriculation/A-level/SAM</option>
+							<option value="3">Certificate</option>
+							<option value="4">Foundation/Diploma</option>
+							<option value="5">Bachelor's Degree</option>
+							<option value="6">Master's Degree</option>
+							<option value="7">Doctorate</option>
+							<option value="8">Postgraduate</option>
+							<option value="9">Other:</option>
+						</select>
+						<small id="acaQualiErrorMsg" class="form-text text-danger" style="display:none;">This field must be selected.</small>
+					</div>
+					<!--Option 'Other:' is selected-->
+					<div class="form-group" id="OtherNewOpt" style="display:none;">
+						<label for="flcProvServiceslabel">Other Academic Qualification<span class="text-danger ml-1">* </span></label>
+						<small id="otherAcaQualiErrorMsg1" class="form-text text-danger" style="display: block;margin-top:-10px;">Fill field this field if option 'Other:' is selected.</small>
+						<input type="text" class="form-control" id="OtherNewAcaQualiOpt" onblur="checkOthAcaQuali()" placeholder="Enter Your New 'Other' Academic Qualification Here.." required>
+						<small id="otherAcaQualiErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled if option 'Other:' is selected.</small>
+					</div>
+					<div class="form-group">
+						<label for="flcProfessionallabel"><span class="text-danger ml-1 mx-1">*</span>Current Professional/Specification:</label>
+						<p id="flcProf2"style="display:inline;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+						<input type="text" class="form-control" id="flcNewProf" onblur="checkProf()" placeholder="Enter Your New Professional/Specification Here.." required>
+						<small id="profErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+					</div>
+					<div class="form-group">
+						<i class="fas fa-briefcase"></i>
+						<h3 class="step" style="display:inline;margin-left:10px;">Freelancer Details</h3><br><br>
+						<label for="flcProvServiceslabel"><span class="text-danger ml-1 mx-1">*</span>Current Provided Services:</label>
+						<p id="flcServices2" style="display:inline; margin-left:5px;font-size:18px; color:#507CD5; font-weight:bold;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+						<input type="text" class="form-control" id="flcNewServices" onblur="checkServices()" placeholder="Enter Your New Services Provided Here.." required>
+						<small id="provServicesErrorMsg" class="form-text text-danger" style="display:none;">This field must be selected.</small>
+					</div>
+					<div class="form-group">
+						<label for="flcServicesDescplabel"><span class="text-danger ml-1 mx-1">*</span>Current Services Description:</label>
+						<p id="flcServicesDescp2"style="display:block;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+						<textarea rows="4" cols="50" class="form-control" id="flcNewServicesDescp" type="textarea" name="ServicesDescription" onblur="checkSevDescp()" placeholder="Edit Your Services Details Here.." required></textarea>
+						<small id="sevDescpErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+					</div>
+					<div class="form-group">
+						<label for="flcWorkHrslabel"><span class="text-danger ml-1 mx-1">*</span>Current Working Hours:</label>
+						<p id="flcWorkHrs2"style="display:inline;font-size:18px; color:#507CD5; font-weight:bold;"></p>
+						<input type="text" class="form-control" id="flcNewWorkHrs" onblur="checkWorkHrs()" placeholder="Enter Your New Working Hours(*am/pm-*am/pm)Here.." required>
+						<small id="workHrsErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+					</div>
+					<br>
+					<div class="form-group">
+						<button type="button" class="cancelBtn btn-lg text-uppercase mb-3" onclick="cancelUpdate2()">Cancel</button>
+						<button type="button" class="saveBtn  btn-lg text-uppercase mb-3" onclick="saveUpdateFlcProfile()">Save</button>
+					</div>
+					<div class="form-group">
+						<small class="text-danger" style="float:left; margin-left:10px;font-size:13px;"><span class="text-danger ml-1 mx-2">*</span>Required field must be filled. </small><br>
+						<small class="text-danger" style="float:left; margin-left:10px;font-size:13px;"><span class="text-danger ml-1 mx-2">*</span>Copy & paste back the current information if no changes. </small>
+					</div>
+				</div>
+		</div>
+		<div class="section-2"></div>
+		<footer>
+            <div class="container-fluid p-0" id="aboutUs">
+                <div class="row text-left">
+                    <div class="col-md-5 col-sm-5">
+                        <h4 class="font-weight-bold">About Us</h4>
+                        <p class="text-white">
+                            EasyHired was developed to help freelancers to promote themselves globally
+                            through network. We provide the simplest way to search for the talents
+                            you want.
+                        </p>
+                        <img src="../images/whiteTransparentLogo-03.png" alt="EasyHired">
+                        <p class="pt-4 text-white"> ©2020 | Prepared by
+                            <span>Group 16</span>
+                        </p>
+                    </div>
+                <div class="col-md-5 col-sm-12">
+                    <h4 class="font-weight-bold">Newsletter</h4>
+                        <p class="text-white">Stay Updated</p>
+                        <form class="form-inline">
+                            <div class="col pl-0">
+                                <div class="input-group pr-5">
+                                    <input type="text" class="form-control bg-dark text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+                <div class="social col-md-2 col-sm-12">
+                    <h4 class="font-weight-bold">Follow Us</h4>
+                    <div class="column text-light">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                        <a href="https://twitter.com/twitter" class="fab fa-twitter"></a>
+                        <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
+                    </div>
+                </div>
+            </div>
+			</div>
+        </footer>
+
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Firebase Connection -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+	<script>
+	  //  Firebase configuration
+		var firebaseConfig = {
+		apiKey: "AIzaSyDtitM579YVzXBQj-GcTk1N6yGihhFkXJ4",
+		authDomain: "cmt322-gp16.firebaseapp.com",
+		databaseURL: "https://cmt322-gp16.firebaseio.com",
+		projectId: "cmt322-gp16",
+		storageBucket: "cmt322-gp16.appspot.com",
+		messagingSenderId: "780450955258",
+		appId: "1:780450955258:web:bf9e8312e4b6089a04ee43",
+		measurementId: "G-JPM4D18DWM"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+	</script>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/regLog.js"></script>
+	<script src="../js/profile.js"></script>
+	<script src="../js/main.js"></script> 
+    
+</html>

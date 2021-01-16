@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+	<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>EasyHired | Search your favourite Freelancer</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" class="stylesheet">
+        
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/mobile-style.css"/>
+		
+        
+		<!-- Sweet Alert JavaScript -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    </head>
+
+    <body class="client-page" onload="displayClientProfile()">
+        <!--Header-->
+        <header class="userViewClient">
+            <div class="container-fluid p-0" style="background-color: rgb(23, 65, 95);">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-logo" href="#">
+                        <img src="../images/whiteTransparentLogo-03.png" alt="#EasyHired" style="width: 10rem;"></i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars text-light"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="mr-auto"></div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a href="../pages/main.html" class="nav-link"  >Main
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../pages/search.html">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#aboutUs">About Us</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <a href="#../pages/cPage.html" class="nav-link">Profile</a>
+                                    <div class="dropdown-content">
+                                        <a href="#Favourite">Favourite List</a>
+                                        <a href="#" onclick="javascript:logout()">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header> 
+		<div class="profile pt-4" id="showCltProfile" >
+            <div class="container">
+                <div class="profile-head">
+                    <div class="row" >
+                        <div class="col-md-4" >
+                            <div class="profile-img">
+                                <img src="../images/avatar.png" alt="Profile-Pic" class="profile-image">
+                            </div>
+                        </div>
+                        <div class="col-md-8" >
+                            <div class="profile-head">
+								<div class="row">
+                                    <div class="col-md-6">
+                                        <div class="WlcUser">
+                                            <h3>My Profile</h3>
+                                            <span>Welcome!</span>
+                                            <span id="clientUname">User Name</span>							
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p style="padding: 0;"><button id="editBtn" class="btn btn-outline-primary text-uppercase mt-3" onclick="showEdit()">Edit Profile</button></p>
+                                    </div>
+                                </div>
+                                <div class="personal_details">
+                                    <!-- Client's Account Related Details -->
+                                    <h6>User Information</h6>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="card-row">
+                                                <h6>Full Name</h6>
+                                                <span id="clientName">User's Full Name</span>
+                                            </div>
+                                            <div class="card-row">
+                                                <h6>Email</h6>
+                                                <span id="clientEmail">userEmail@gmail.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card-row">
+                                                <h6>Account Type</h6>
+                                                <span id="accType">Client</span>
+                                            </div>
+                                            <div class="card-row">
+                                                <h6>Passport</h6>
+                                                <span id="clientPassportIC">000000000000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="personalInfor-tab" data-toggle="tab" href="#cltpersonalInforSec">Personal Information</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#cltContactSec">Contact</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="favourite-tab" data-toggle="tab" href="#favourite">Favourite List</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="section-2"></div>
+                    </div>
+                    <div class="row" >
+						<div class="col-md-4">
+                        </div>
+					
+                        <div class="col-md-8" >
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- About Me Content -->
+                                <div id="cltpersonalInforSec" class="container tab-pane active"><br>
+									<div class="container1">
+                                        <h3>About Me</h3>
+                                    </div>
+                                    <div class="container1">
+                                        <h6 id="clientAbout" class="about-content"></h6>
+                                    </div>
+                                </div>
+                                
+                                <!-- Contacts -->
+                                <div id="cltContactSec" class="container tab-pane fade">
+                                    <div class="container1">
+                                        <h3>Contact Information</h3>
+                                        <label>Phone Number</label>
+                                        <h6 id="clientPhone">000-00000000</h6>
+                                    </div>
+                                    <div class="container1">
+                                        <label>Address</label>
+                                        <h6 id="clientAddress">Address</h6>
+                                    </div>
+                                </div>
+								
+                                <!-- Favourite List -->
+                                <div id="favourite" class="container tab-pane fade">
+                                    <h3>Favourite Freelancer List</h3>
+                                    <div class="form-group">
+                                        <div class="commentBox">
+                                            <div class="rating-wrap"> 
+                                                <div class="table-responsive">
+                                                    <table class="table" id="tbl_favourite">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>NO.</th>
+                                                                <th>Freelancer</th>
+                                                                <th></th>
+                                                                <th>Professional</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tableBody">
+                                                            
+                                                        </tbody>
+                                                    </table>    
+                                                </div>
+                                            </div>    
+                                            
+                                            <div style="display: none;">
+                                                <table id="tableList">
+                                                    <tr id="">
+                                                        <td><span class="sn"></span>.</td>
+                                                        <td><a href="#"><img src="" alt="website template image"></a></td>
+                                                        <td id = "freelancer">Freelancer Profile</td>
+                                                        <td id="details">Professional</td>
+                                                        <td><a class="btn btn-xs delete-record" data-id="0"><i class="fa fa-trash-o"></i></a></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+		<div class="row" id="editProfileSec" style="display:none;" >
+			<h1 class="h1 text-center text-dark mt-3 mb-3">My Profile</h1>
+                      
+			<br><h3 style="text-align:center;font-weight:bold;font-size:35px;">Edit Profile Form</h3><br><br>
+			<div class="form-group">
+				<label for="clientUnamelabel" style="text-align:left;">Username:</label>
+				<p id="clientUname2" style="display:inline;font-size:18px;font-weight:bold;text-align:left;"></p><br>
+				<label for="clientEmaillabel" style="text-align:left;">Email:</label>
+				<p id="clientEmail2" style="display:inline;font-size:18px;font-weight:bold;text-align:left;"></p><br>
+				<label for="accTypelabel" style="text-align:left;">Account Type:</label>
+				<p id="accType2"style="display:inline;font-size:18px;font-weight:bold;text-align:left;"></p>
+			</div>
+			<div class="form-group">
+                <i class="fas fa-user-cog" ></i>
+                <h3 class="step" style="display:inline;margin-left:10px;">Personal Information</h3><br><br>
+				<label for="cltFullNamelabel"><span class="text-danger ml-1 mx-1">*</span>Current Full Name: </label>
+				<p id="clientName2" style="display:inline; margin-left:5px; font-size:18px; color:#507CD5; font-weight:bold;" ></p><br>
+				<input type="text" class="form-control" id="clientNewName" onblur="checkFullName()" placeholder="Enter Your New Full Name Here.." required>
+				<small id="fullNameErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+			</div>
+			<div class="form-group">
+				<label for="cltPassportIClabel"><span class="text-danger ml-1 mx-1">*</span>Current Passport/IC NO.:</label>
+				<p id="clientPassportIC2" style="display:inline;margin-left:5px;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+				<input type="text" class="form-control" id="clientNewPassportIC" onblur="checkPassportIC()" placeholder="Enter Your New Passport/IC (A00000000/999999999999) Here.."required>
+				<small id="passportICErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+			</div>
+			<div class="form-group">
+				<label for="cltAboutlabel"><span class="text-danger ml-1 mx-1">*</span>Current About:</label>
+				<p id="clientAbout2" style="display:block;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+				<textarea rows="4" cols="50" class="form-control" id="clientNewAbout" type="textarea" name="About" onblur="checkAbout()" placeholder="Edit Your New About Here.."required ></textarea>
+				<small id="aboutErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+			</div>
+			<div class="form-group">
+                <i class="fas fa-address-card"></i>
+                <h3 class="step" style="display:inline;margin-left:10px;">Contact</h3><br><br>
+				<label for="cltPhonelabel"><span class="text-danger ml-1 mx-1">*</span>Current Phone Number:</label>
+				<p id="clientPhone2" style="display:inline; margin-left:5px;font-size:18px; color:#507CD5; font-weight:bold;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+				<input type="text" class="form-control" id="clientNewPhone" onblur="checkPhone()" placeholder="Enter Your New Phone No.(XXX-XXX XXXX) Here.."required>
+				<small id="phoneErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+			</div>
+			<div class="form-group">
+				<label for="cltAddresslabel"><span class="text-danger ml-1 mx-1">*</span>Current Address:</label>
+				<p id="clientAddress2"style="display:block;font-size:18px; color:#507CD5; font-weight:bold;"></p><br>
+				<textarea rows="4" cols="50" class="form-control" id="clientNewAddress" type="textarea" name="Address" onblur="checkAddress()" placeholder="Edit Your New Address Here.."required></textarea>
+				<small id="addressErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+			</div>
+			<br>
+			<div class="form-group">
+				<button type="button" class="cancelBtn btn-lg text-uppercase mb-3" onclick="cancelUpdate()">Cancel</button>
+				<button type="button" class="saveBtn  btn-lg text-uppercase mb-3" onclick="saveUpdateCltProfile()">Save</button>
+			</div>
+			<div class="form-group">
+				<small class="text-danger" style="float:left; margin-left:10px;font-size:13px;"><span class="text-danger ml-1 mx-2">*</span>Required field must be filled. </small>
+				<small class="text-danger" style="float:left; margin-left:10px;font-size:13px;"><span class="text-danger ml-1 mx-2">*</span>Copy & paste back the current information if no changes. </small>
+			</div>
+		</div>
+        <div class="section-2"></div>
+        
+		<footer>
+            <div class="container-fluid p-0" id="aboutUs">
+                <div class="row text-left">
+                    <div class="col-md-5 col-sm-5">
+                        <h4 class="font-weight-bold">About Us</h4>
+                        <p class="text-white">
+                            EasyHired was developed to help freelancers to promote themselves globally
+                            through network. We provide the simplest way to search for the talents
+                            you want.
+                        </p>
+                        <img src="../images/whiteTransparentLogo-03.png" alt="EasyHired">
+                        <p class="pt-4 text-white"> ©2020 | Prepared by
+                            <span>Group 16</span>
+                        </p>
+                    </div>
+                <div class="col-md-5 col-sm-12">
+                    <h4 class="font-weight-bold">Newsletter</h4>
+                        <p class="text-white">Stay Updated</p>
+                        <form class="form-inline">
+                            <div class="col pl-0">
+                                <div class="input-group pr-5">
+                                    <input type="text" class="form-control bg-dark text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+                <div class="social col-md-2 col-sm-12">
+                    <h4 class="font-weight-bold">Follow Us</h4>
+                    <div class="column text-light">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                        <a href="https://twitter.com/twitter" class="fab fa-twitter"></a>
+                        <a href="https://www.youtube.com/" class="fab fa-youtube"></a>
+                    </div>
+                </div>
+            </div>
+			</div>
+        </footer>
+
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+     <!-- Firebase Connection -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+
+	<script>
+		var firebaseConfig = {
+		apiKey: "AIzaSyDtitM579YVzXBQj-GcTk1N6yGihhFkXJ4",
+		authDomain: "cmt322-gp16.firebaseapp.com",
+		databaseURL: "https://cmt322-gp16.firebaseio.com",
+		projectId: "cmt322-gp16",
+		storageBucket: "cmt322-gp16.appspot.com",
+		messagingSenderId: "780450955258",
+		appId: "1:780450955258:web:bf9e8312e4b6089a04ee43",
+		measurementId: "G-JPM4D18DWM"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+	</script>
+
+    <!-- Custom JavaScript -->
+    <script src="../js/profile.js"></script>
+    <script src="../js/regLog.js"></script>
+    <script src="../js/main.js"></script> 
+</html>

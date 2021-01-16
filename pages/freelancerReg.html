@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Freelancer Registration | EasyHired</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/mobile-style.css"/>
+
+        <!-- Sweet Alert2 JavaScript -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+</head>
+
+<body class="login-Reg-page">
+    <div class="container-fluid">
+		<div class="client-Reg bg-white mt-5 pb-4 mb-5 ">
+			<div class="row">
+				<div class="mx-auto px-3 py-4">
+					<div id="RegisterForm" class="reg-form">
+                        <img src="../images/logoTransparent-02.png" alt="EasyHired">
+						<h2 class="text-center">Freelancer Registration</h1>
+						<div class="form-group">
+                            <label for="step1Label" class="step" style="font-weight: bold;">1. Account Setup:</label><br>
+                            <div class="details">
+                                <label for="flcUsernamelabel">Username<span class="text-danger ml-1">*</span></label>
+							    <input type="text" class="form-control" id="flcUname" onblur="checkUserName1()" placeholder="Username" required>
+							    <small id="userNameErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <div class="details">
+                                <label for="flcEmaillabel">Email<span class="text-danger ml-1">*</span></label>
+							    <input type="email" class="form-control" id="flcEmail" onblur="checkEmail1()" placeholder="*@example.com" required>
+							    <small id="emailErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled. /Check the email address again.</small>
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <div class="details">
+                                <label for="flcPasswordlabel">Password<span class="text-danger ml-1">*</span></label>
+							    <input type="password" class="form-control" id="flcPswd" onblur="checkPassword2()" placeholder="**********" required>
+							    <small id="passwordErrorMsg2" class="form-text text-danger" style="display:none;">The password must consist of uppercase, lowercase, digit & more than 10 characters.</small>
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <div class="details">
+                                <label for="flcPassword1label">Re-Enter Password<span class="text-danger ml-1">*</span></label>
+							    <input type="password" class="form-control" id="flcPswd1" onblur="checkPassword3()" placeholder="**********" required>
+							    <small id="passwordErrorMsg3" class="form-text text-danger" style="display:none;">The password must consist of uppercase, lowercase, digit & more than 10 characters.</small>
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <label for="step2Label" class="step" style="font-weight: bold;">2. Personal Information:</label>
+                            <div class="details">
+                                <label for="flcFullNamelabel">Full Name<span class="text-danger ml-1">*</span></label>
+							    <input type="text" class="form-control" id="flcName" onblur="checkFullName1()" placeholder="Full Name" required>
+							    <small id="fullNameErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <div class="details">
+                                <label for="flcPassportIClabel">Passport/IC NO.<span class="text-danger ml-1">*</span></label>
+							    <input type="text" class="form-control" id="flcPassportIC" onblur="checkPassportIC1()" placeholder="A00000000/999999999999" required>
+							    <small id="passportICErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <div class="details">
+                                <label for="flcPhonelabel">Phone Number<span class="text-danger ml-1">*</span></label>
+							    <input type="text" class="form-control" id="flcPhone" onblur="checkPhone1()" placeholder="XXX-XXX XXXX" required>
+							    <small id="phoneErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="details">
+                                <label for="flcAddresslabel">Address<span class="text-danger ml-1">*</span></label>
+							    <textarea rows="4" cols="50" class="form-control" id="flcAddress" type="textarea" name="Address"onblur="checkAddress1()" placeholder="Address" required></textarea>
+							    <small id="addressErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="details">
+                                <label for="flcAboutlabel">About<span class="text-danger ml-1">*</span></label>
+							    <textarea rows="4" cols="50" class="form-control" id="flcAbout" type="textarea" name="About" onblur="checkAbout1()" placeholder="Describe Yourself" required></textarea>
+							    <small id="aboutErrorMsg1" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+						<div class="form-group">
+							<label for="step3Label" class="step" style="font-weight: bold;">3. Skills & Qualifications:</label>
+                            <div class="details">
+                                <label for="flcAcaQualilabel">Academic Qualification<span class="text-danger ml-1">*</span></label>
+                                <select id="flcAcaQualification" class="form-control" onclick ="checkAcaQuali()" onChange="check(this)" required>
+                                    <option value="0" selected>Please Select:</option>
+                                    <option value="1">SPM/O-level</option>
+                                    <option value="2">SPTM/Matriculation/A-level/SAM</option>
+                                    <option value="3">Certificate</option>
+                                    <option value="4">Foundation/Diploma</option>
+                                    <option value="5">Bachelor's Degree</option>
+                                    <option value="6">Master's Degree</option>
+                                    <option value="7">Doctorate</option>
+                                    <option value="8">Postgraduate</option>
+                                    <option value="9">Other:</option>
+                                </select>
+                                <small id="acaQualiErrorMsg" class="form-text text-danger" style="display:none;">This field must be selected.</small>
+                            </div>
+                        </div>
+						<div class="form-group" id="OtherOpt" style="display:none;">
+                            <div class="details">
+                                <label for="flcProvServiceslabel">Other Academic Qualification<span class="text-danger ml-1">* </span></label>
+                                <small id="otherAcaQualiErrorMsg1" class="form-text text-danger" style="display: inline;">Fill field this field if option 'Other:' is selected.</small>
+                                <input type="text" class="form-control" id="OtherAcaQualiOpt" onblur="checkOthAcaQuali()" placeholder="Other Academic Qualification" required>
+                                <small id="otherAcaQualiErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="details">
+                                <label for="flcProfessionallabel">Professional/Specification<span class="text-danger ml-1">*</span></label>
+							    <input type="text" class="form-control" id="flcProf" onblur="checkProf()" placeholder="Professional/Specification" required>
+							    <small id="profErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="step4Label" class="step" style="font-weight: bold;">4. Freelancer Details:</label>
+                            <div class="details">
+                                <label for="flcTypelabel">Freelancer Type<span class="text-danger ml-1">*</span></label>
+                                <select id="flcType" class="form-control" onclick ="checkFreeType()" onChange="check1(this)" required>
+                                    <option value="0" selected>Please Select:</option>
+                                    <option value="1">Individual</option>
+                                    <option value="2">Company</option>
+                                </select>
+                                <small id="flctypeErrorMsg" class="form-text text-danger" style="display:none;">This field must be selected.</small>
+                            </div>
+                        </div>
+                        <!--Option 'Company' Section-->
+                        <div class="form-group" id="CompNameField" style="display:none;">
+                            <div class="details">
+                                <label for="flcCompNamelabel">Company Name<span class="text-danger ml-1">* </span></label>
+							    <small id="compNameErrorMsg1" class="form-text text-danger" style="display: inline;">Fill out this field if option 'Company:' is Selected.</small>
+							    <input type="text" class="form-control" id="flcCompName" onblur="checkCompName()" placeholder="Company Name" required>
+							    <small id="compNameErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled</small>
+                            </div>
+                        </div>
+                        <div class="form-group" id="CompRegNoField" style="display:none;">
+                            <div class="details">
+                                <label for="flcCompRegNolabel">Company Registration Number<span class="text-danger ml-1">* </span></label>
+							    <small id="compRegNoErrorMsg1" class="form-text text-danger" style="display: inline;">Fill out this field if option 'Company:' is Selected.</small>
+							    <input type="text" class="form-control" id="flcCompRegNo" onblur="checkCompRegNo()" placeholder="Company Rgistration No." required>
+							    <small id="compRegNoErrorMsg" class="form-text text-danger" style="display:none;">This Field must be filled</small>
+                            </div>
+                        </div>
+                        <div class="form-group" id="CompDescpField" style="display:none;">
+                            <div class="details">
+                                <label for="flcCompDescplabel">Company Description<span class="text-danger ml-1">* </span></label>
+							<small id="compDescpErrorMsg1" class="form-text text-danger" style="display: inline;">Fill out this field if option 'Company:' is Selected.</small>
+							<textarea rows="4" cols="50" class="form-control" id="flcCompDescp" type="textarea" name="CompanyDescription" onblur="checkCompDescp()" placeholder="Describe Your Company" required></textarea>
+							<small id="compDescpErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled</small>
+                            </div>
+                        </div>
+                        <!--Option 'Company' Section End-->
+                        <div class="form-group">
+                            <div class="details">
+                                <label for="flcProvServiceslabel">Provided Services<span class="text-danger ml-1">*</span></label>
+							    <input type="text" class="form-control" id="flcServices" onblur="checkServices()" placeholder="Provided Services" required>
+							    <small id="provServicesErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="details">
+                                <label for="flcServicesDescplabel">Services Description<span class="text-danger ml-1">*</span></label>
+							    <textarea rows="4" cols="50" class="form-control" id="flcServicesDescp" type="textarea" name="ServicesDescription" onblur="checkSevDescp()" placeholder="Describe Services Details that You can Provide" required></textarea>
+							    <small id="sevDescpErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="details">
+                                <label for="flcWorkHrslabel">Working Hours<span class="text-danger ml-1">*</span></label>
+							    <input type="text" class="form-control" id="flcWorkHrs" onblur="checkWorkHrs()" placeholder="Working Hours, etc: *am/pm-*am/pm" required>
+							    <small id="workHrsErrorMsg" class="form-text text-danger" style="display:none;">This field must be filled.</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin: 0;">
+                            <div class="registerBtn">
+                                <button type="button" class="cltLoginbtn btn-outline-primary text-uppercase mt-4 mb-3 " onclick="freelancerRegister()">Register</button>
+                            </div>
+                        </div>
+                        <br>
+                        <p style="margin: 0;">Already have an account? Login here: <a href="../pages/login.html"><strong class="text-primary text-uppercase showSignInForm">LOGIN</strong></a></p>
+                        <small class="text-danger"><span class="text-danger ml-1">*</span> Please fill out all the required field.</small>
+                    </div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!--Firebase Connection -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+
+	<script>
+        //  Firebase configuration
+		var firebaseConfig = {
+		apiKey: "AIzaSyDtitM579YVzXBQj-GcTk1N6yGihhFkXJ4",
+		authDomain: "cmt322-gp16.firebaseapp.com",
+		databaseURL: "https://cmt322-gp16.firebaseio.com",
+		projectId: "cmt322-gp16",
+		storageBucket: "cmt322-gp16.appspot.com",
+		messagingSenderId: "780450955258",
+		appId: "1:780450955258:web:bf9e8312e4b6089a04ee43",
+		measurementId: "G-JPM4D18DWM"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+	</script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/regLog.js"></script>
+
+</body>
+</html>

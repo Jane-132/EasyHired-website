@@ -1,0 +1,906 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,900&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+section {
+    overflow-x: hidden;
+}
+
+.homepage header{
+    overflow-x: hidden;
+}
+
+:root {
+  --Based-font: "Arial", sans-serif;
+  /*--Rubik: "Rubik", cursive;
+  --Patua: "Patua One", cursive;
+  --Lobster: "lobster", cursive;*/
+  --SourceSans: "Source Sans Pro", sans-serif;
+  --light-black: #2e2c2cea;
+  --bggradient: linear-gradient(to bottom, #1d64c2, #052044);
+  --light-gray: rgba(201, 201, 201, 0.877);
+  --night-blue: rgb(23, 65, 95);
+  --light-blue:  rgb(24, 142, 211);
+  --deep-blue: rgb(12, 43, 63);
+}
+
+header a {
+  font-family: var(--Based-font);
+  font-size: 0.9em;
+  color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--night-blue);
+  min-width: 160px;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--deep-blue);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+header .nav-item:last-child {
+  padding-right: 10.5em;
+}
+
+header .nav-item {
+  padding: 0.9em;
+}
+
+header .navbar-logo {
+  padding-left: 25vmin;
+}
+
+header .nav-link:hover {
+  color: var(--light-gray);
+}
+
+header .row .col-md-7 {
+  padding: 22vmin 1vmin;
+  padding-bottom: 35vmin;
+}
+
+header {
+  background: url("../images/drinkCoffee.jpeg") center no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+}
+
+.client-homepage header {
+    background: url("../images/citydarker.png") center no-repeat;
+    background-size: cover;
+    background-origin: content-box;
+}
+.freelancer-homepage header {
+  background: url("../images/freelancerProfileBackDark.png") center no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+}
+
+.search-page header {
+  background: url("../images/coffeeDark.png") center no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+}
+
+header .container .col-md-7 {
+    font-family: "Rubik", sans-serif;
+}
+
+header .container .col-md-7 h4 {
+    text-align: left;
+    font-family: var(--SourceSans);
+    font-size: 8vmin;
+    padding-left: 20vmin;
+    color: var(--night-blue);
+}
+
+.client-homepage header .mainPageTitle{
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+    margin: auto;
+    text-align: center;
+    font-family: var(--SourceSans);
+    font-size: 8vmin;
+    color: white;
+}
+
+.client-homepage header h4{
+  font-size: 48px;
+}
+
+.search-page header .mainPageTitle{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin: auto;
+  text-align: center;
+  font-family: var(--SourceSans);
+  font-size: 8vmin;
+  color: white;
+}
+
+.search-page header .mainPageTitle{
+  font-size: 48px;
+}
+
+.freelancer-homepage header .mainPageTitle{
+  padding-top: 8rem;
+    padding-bottom: 10rem;
+    margin: auto;
+    text-align: center;
+    font-family: var(--SourceSans);
+    font-size: 8vmin;
+    color: white;
+}
+
+.freelancer-homepage header .mainPageTitle h4{
+  font-size: 68px;
+}
+
+header .container .btn {
+    width: 50vmin;
+    float: lef
+    t;
+    margin-left: 20vmin;
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+header .container .btn:hover {
+    background-color: var(--night-blue);
+}
+
+.search-container{
+    padding-left: 5vmin; 
+    margin: 8px;
+}
+
+.search-container {
+    padding-left: 0.8rem;
+    width: 60%;
+}
+
+.primary-btn {
+    margin-top: 2vmin;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.primary-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+/********** section 1 **************/
+
+.section-1 {
+    margin-top: -20vmin;
+    padding: 20vmin 5vmin 8vmin 5vmin;
+}
+
+.services{
+    text-align: center;
+    margin-top: -5rem;
+    background-color:rgba(255, 255, 255, 0.6);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.services a{
+    color: rgb(0, 0, 0);
+    padding: 10vmin 25vmin 5vmin 25vmin;
+    text-decoration: none;
+    display: block;
+}
+
+.services h4{
+    font-weight: 600;
+    font-size: 30px;
+    padding-bottom: 2vmin;
+}
+
+/*  Section 2  */
+
+.section-2 {
+    margin-bottom: 2rem;
+}
+
+.services-grid{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.services-grid-item{
+    min-width: 20rem;
+    max-width: 20rem;
+    min-height: 20rem;
+    margin: 5px 10px;
+    padding-top: 10rem;
+    color: #fafafa; 
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.services-grid-item h1{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.services-grid-item p{
+    padding: 0 3rem;
+    line-height: 1.3rem;
+}
+
+.services-grid-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, rgba(12, 44, 66, 0.8)0%,rgba(31, 77, 110, 0.7)
+    100%);
+    z-index: -1;
+}
+
+.create-acc{
+    background-image: url("../images/product-photography-lead-image_800x_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-talents{
+    background-image: url("../images/how-to-give-a-presentation-in-office-1024x616_2.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.review-talents{
+    background: url("../images/photo-1515879218367-8466d910aaa4_2.jpeg.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.border-radius {
+  border-radius: 340px;
+  width: 60%;
+}
+
+footer {
+  background: rgb(0, 0, 0);
+  overflow-x: hidden;
+  padding: 14vmin 18vmin;
+}
+
+footer img{
+    max-width: 15rem;
+    height: auto;
+}
+
+footer h4{
+    color: white;
+  }
+
+footer p > span {
+  color: #ff512f;
+}
+
+footer a{
+  color: white;
+  padding-left: 3px;
+}
+
+footer a:hover{
+  text-decoration: none;
+}
+
+footer input {
+  border: none !important;
+}
+
+footer input::placeholder {
+  color: white !important;
+}
+
+footer .input-group .input-group-text {
+  background: var(--light-gray);
+  border: none;
+}
+
+/* It is Adjacent sibling combinator */
+footer .column i + i {
+  padding: 0 0.5em;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.815);
+  z-index: 9999;
+  transition: all 1.5s ease;
+}
+
+/*Login Page*/
+.text-danger {
+    font-size: 12px;
+}
+
+.login-Reg-page{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+    background: var(--bggradient);
+}
+
+.login-Reg-page h2{
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.login-form img{
+    margin: auto;
+    display: block;
+    max-width: 15rem;
+    height: auto;
+}
+
+.login-Reg{
+    margin: auto;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    width: 30rem;
+}
+
+.login-box{
+    padding: 1.5rem 1rem;
+}
+
+textarea{
+    resize: none;
+    overflow:hidden;
+}
+
+.form-group button {
+    width: 30%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s ease;
+    display:inline-block;
+    align-items: right;
+}
+  
+.form-group button:hover{
+    background: var(--light-blue) !important;
+}
+
+.section {
+      display:block;
+      font-size: 20px;
+      font-weight: 600;
+}
+
+.loginBtn {
+    text-align:right;
+}
+
+/*Client Registration Page*/
+.client-Reg{
+    margin: auto;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    width: 35rem;
+}
+
+.client-Reg img{
+    margin: auto;
+    display: block;
+    max-width: 15rem;
+    height: auto;
+}
+
+.details{
+    padding: 0 1rem;
+}
+
+.details label{
+    margin: 0;
+}
+
+.registerBtn{
+    margin-right: 1rem;
+    text-align: right;
+}
+
+/*Search Page*/
+.search-table {
+  overflow: auto;
+}
+
+.search-page .input-group{
+  margin-top: 2rem;
+}
+
+.search-page .search-box{
+  padding: 1rem;
+  margin-bottom: 5rem;
+}
+
+
+/*Comments & Ratings*//*****************************************************/
+
+.profile{
+  
+  background-color: #ffffff;
+  padding-bottom: 2rem;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  margin: 5rem;
+  
+}
+
+.boxes{
+    /*container*/
+    padding: 0 5rem 2rem 5rem;
+}
+
+.service_card {
+  border-style: solid;
+  border-width: 5px;
+  border-top: hidden;
+  border-right: hidden;
+  border-bottom: hidden;
+  border-color: var(--deep-blue);
+  background-color: rgba(243, 240, 240, 0.479);
+  padding: 1rem;
+}
+
+.commentBox{
+    border-style: solid; 
+    border-width: 2px; 
+    border-radius: 2.5px; 
+    border-color: rgb(8, 74, 134); 
+    padding: 1rem;
+}
+
+.profilePNG img{
+    width: 5rem;
+}
+
+/*Rating Selection in comment section*/
+.rating{
+    width: 100%;
+    border: none;
+    float: left;
+    align-content: left;
+}
+
+/*styling star rating*/
+
+.rating > input{
+    display: none;
+}
+
+.rating > label:before{
+    content: '\f005';
+    font-family: FontAwesome;
+    margin: 5px;
+    font-size: 1.5rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.rating > .half:before{
+    content: '\f089';
+    position: absolute;
+    cursor: pointer;
+}
+
+.rating > label{
+    color: #ddd;
+    float: right;
+    cursor: pointer;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover, 
+.rating:not(:checked) > label:hover ~ label{
+    color: var(--light-blue);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label{
+    color: var(--night-blue);
+}
+
+/*Styling using stars font(not use yet)*/
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+    font-size: 12px;
+}
+
+.stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+}
+
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+.stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #f8ce0b;
+}
+
+.attribution {
+    font-size: 12px;
+    color: #444;
+    text-decoration: none;
+    text-align: center;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}
+.attribution:hover {
+    color: var(--deep-blue);
+}
+
+.comments_card {
+    padding: 12px;
+    border-left: solid;
+    border-bottom: hidden;
+    border-top: hidden;
+    border-right: hidden;
+    border-color: var(--light-blue);
+    background-color: rgba(243, 240, 240, 0.479);
+}
+
+.above_navi {
+  margin-bottom: 2rem;
+}
+
+/*Client Registration Page*/
+.client-Reg{
+    margin: auto;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    width: 35rem;
+}
+
+.client-Reg img{
+    margin: auto;
+    display: block;
+    max-width: 15rem;
+    height: auto;
+}
+
+.details{
+    padding: 0 1rem;
+}
+
+.details label{
+    margin: 0;
+}
+
+.registerBtn{
+    margin-right: 1rem;
+    text-align: right;
+}
+
+/*Comments & Ratings*//*****************************************************/
+.boxes{
+    /*container*/
+    padding: 0 5rem 2rem 5rem;
+}
+
+.commentBox{
+    border-style: solid; 
+    border-width: 2px; 
+    border-radius: 2.5px; 
+    border-color: rgb(8, 74, 134); 
+    padding: 1rem;
+}
+
+.profilePNG img{
+    width: 5rem;
+}
+
+/*Rating Selection in comment section*/
+.rating{
+    width: 100%;
+    border: none;
+    float: left;
+    align-content: left;
+}
+
+/*styling star rating*/
+
+.rating > input{
+    display: none;
+}
+
+.rating > label:before{
+    content: '\f005';
+    font-family: FontAwesome;
+    margin: 5px;
+    font-size: 1.5rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.rating > .half:before{
+    content: '\f089';
+    position: absolute;
+    cursor: pointer;
+}
+
+.rating > label{
+    color: #ddd;
+    float: right;
+    cursor: pointer;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover, 
+.rating:not(:checked) > label:hover ~ label{
+    color: #2ce679;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label{
+    color: #2ddc76;
+}
+
+/*Styling using stars font(not use yet)*/
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+    font-size: 12px;
+}
+
+.stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+}
+
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+.stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #f8ce0b;
+}
+
+.attribution {
+    font-size: 12px;
+    color: #444;
+    text-decoration: none;
+    text-align: center;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}
+.attribution:hover {
+    color: #1fa67a;
+}
+/*Client Profile Page*/
+ #editProfileSec{
+  display: block;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  height:100%;
+  transform: translate(-50%,-20%);
+  background:white;
+  width: 600px;
+  padding: 10px;
+  font-size:18px;
+  margin-top:320px;
+}
+.form-group{
+	text-align:left;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:20px;
+	font-size:15px;
+}
+
+
+ textarea{
+	resize:none;
+	overflow:hidden;
+}
+.form-group .saveBtn{
+	width:20%;
+	border-radius:5px;
+	font-size:17px;
+	font-weight:bold;
+	padding-bottom:10px;
+	background: white;
+	color: #0C88EE;
+	transition-duration: 0.4s;
+	margin-left:30px;
+	text-align:center;
+	cursor:pointer;
+}
+.form-group .saveBtn:hover{
+	background-color: #0C88EE;
+	color: white;
+}
+.form-group .saveBtn:focus{
+	outline-color: #0C88EE;
+}
+.form-group .cancelBtn{
+	width:20%;
+	border-radius:5px;
+	font-size:17px;
+	font-weight:bold;
+	padding-bottom:10px;
+	background: white;
+	color: #FF0505;
+	transition-duration: 0.4s;
+	margin-left:280px;
+	text-align:center;
+	cursor:pointer;
+}
+.form-group .cancelBtn:hover{
+	background-color: #FF0505;
+	color: white;
+}
+.form-group .cancelBtn:focus{
+	outline-color: #FF0505;
+}
+/*Freelancer Profile Page*/
+
+.profile-image{
+  width: 180px; 
+  height: 200px; 
+  display: block;
+  margin-top: 2rem;
+  margin-left: auto; 
+  margin-right: auto; 
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.profile{
+  background-color: #ffffff;
+  padding-bottom: 2rem;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  margin: 5rem;
+}
+
+.editForm{
+  display: block;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  height:100%;
+  transform: translate(-50%,-10%);
+  background:white;
+  width: 600px;
+  font-size:18px;
+  margin-top:320px;
+
+}
+
+.WlcUser h3 {
+  font-weight: bold;
+}
+
+.card-row {
+  margin-top: 0.5rem;
+}
+
+.personal_details{
+  border: 5px solid;
+  border-top: hidden;
+  border-right: hidden;
+  border-bottom: hidden;
+  border-color: var(--night-blue);
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: rgba(243, 243, 243, 0.205);
+}
+
+.personal_details .col-md-6 {
+  margin-bottom: 1rem;
+}
+
+.personal_details h6{
+  font-weight: bold;
+}
+
+.about-content {
+  /*The About Me paragraph content*/
+  font-family:var(--Based-font);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.tab-content h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-content label{
+  font-weight: bold;
+}
+
+/********/
+.editForm{
+  display: block;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  height:100%;
+  transform: translate(-50%,-10%);
+  background:white;
+  width: 600px;
+  font-size:18px;
+  margin-top:320px;
+
+}
+
+/*ServiceReview Page*/
+
+.container button{
+  width: 30%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.5s ease;
+  display:inline-block;
+  align-items: right;
+  background: #ffffff;
+}
+.cancelServbtn{
+  text-align: center;
+}
+.cancelServbtn:hover{
+  background-color: grey!important;
+}
+/*******/
